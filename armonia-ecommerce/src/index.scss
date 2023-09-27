@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App{
+        @apply flex-row justify-between p-4 bg-green-800 shadow-md;
+        text-align: center;
+        font-size: 20px;
+        
+}
+
+.App nav{
+    @apply text-neutral-50 relative flex h-6 items-center justify-between;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
