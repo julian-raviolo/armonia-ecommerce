@@ -1,10 +1,10 @@
 import React from 'react';
 
 function CartWidget() {
-  const itemCount = 5; 
+  const itemCount = 0; 
     return (
-        <div className="cart-widget">
-          <a  href="https://icons8.com/icon/9671/carrito-de-compras"></a>
+        <div className="Carrito">
+          <a  href=""><img src="https://i.imgur.com/ygoVAH8.png" title="Carrito" /></a>
           <span className="item-count">{itemCount}</span>
         </div>
     );

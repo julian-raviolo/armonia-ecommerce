@@ -3,15 +3,127 @@
 @tailwind utilities;
 
 .App{
-        @apply flex-row justify-between p-4 bg-green-800 shadow-md;
+        @apply flex-row justify-between p-4 shadow-md;
         text-align: center;
         font-size: 20px;
-        
+        background-color: #098686;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        position: fixed;
+        width: 100%;
 }
 
 .App nav{
     @apply text-neutral-50 relative flex h-6 items-center justify-between;
     padding-right: 10%;
     padding-left: 10%;
+   
+    
 }
 
+.CardsProducts { 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+    gap: 30px;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 200px;
+    
+}
+
+.Product {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #eaeaea;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
+    
+}
+
+.CardsProducts img {
+    min-width: 130px;
+    max-width: 140px;
+    margin: 10px auto; 
+    display: block; 
+    padding-bottom: 15px;
+    
+}
+
+.ProductTitle {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.ProductPrice {
+    color: #0e9625;
+    margin: 10px 0;
+}
+
+.ProductDescription {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.CardsProducts li {
+    list-style: none;
+    margin: 10px 10px 10px 10px;
+}
+
+.ProductAdd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.Product button{
+    padding: 10px 20px;
+    background-color: #098686; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.navbar {
+    padding: 10px;
+    position: fixed;
+  }
+
+.navbar img{
+    max-width: 100px;
+
+}
+
+.Carrito{
+    display: flex;
+    
+}
+
+.Carrito img{
+    width: 28px;
+    height: 28px;
+    margin-top: 2px;
+    margin-right: 5px;
+    
+}
+
+
+.SecondaryNavBar {
+    position: fixed;
+    top: 57px; /* Ajusta el valor para posicionar la SecondBar debajo de la NavBar principal */
+    left: -4px;
+    width: 200px; /* Ajusta el ancho de la SecondBar según sea necesario */
+    height: 100vh; /* Ajusta la altura de la SecondBar para que ocupe toda la altura vertical */
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }

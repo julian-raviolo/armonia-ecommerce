@@ -1,12 +1,11 @@
 import React from 'react';
 import CartWidget from './CartWidget'; 
-import img from './Images/logo-armonia.png'
 
 
 function NavBar() {
     return (
         <nav className='navbar'>
-            <img src="./logo-armonia.png" alt="Logo"/>
+            <a href=""><img className='Logo' src="https://armoniagospel.com/wp-content/uploads/2023/08/armonia-logo-blanco-768x218.png" title="source: imgur.com" /></a>
             <a href="/">Inicio</a>
             <a href="/acerca">Acerca de</a>
             <a href="/contacto">Contacto</a>
