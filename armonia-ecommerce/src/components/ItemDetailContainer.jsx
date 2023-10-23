@@ -6,7 +6,6 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
 
   useEffect(() => {
-
     const fetchItem = async () => {
       try {
         const response = await fetch(`https://fakestoreapi.com/products/${itemId}`);
@@ -19,16 +18,24 @@ const ItemDetailContainer = () => {
 
     fetchItem();
   }, [itemId]);
+
   return (
     <div>
-      <h2>{item.title}</h2>
-      <img src={item.image} alt={item.title} />
-      <p>{item.description}</p>
-      <p>Categoría: {categoryId}</p> 
-      <p>Precio: ${item.price}</p>
+      {item ? (
+        <div>
+          <h2>{item.title}</h2>
+          <img src={item.image} alt={item.title} />
+          <p>{item.description}</p>
+          <p>Categoría: {categoryId}</p>
+          <p>Precio: ${item.price}</p>
+        </div>
+      ) : (
+        <p>Cargando...</p>
+      )}
     </div>
   );
 };
 
 export default ItemDetailContainer;
+
 

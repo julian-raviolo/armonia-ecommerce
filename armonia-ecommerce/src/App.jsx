@@ -1,15 +1,17 @@
 import React from 'react';
-import NavBar from './components/NavBar';
-import Cart from './components/CartWidget';
-import ProductList from './components/ProductList';
+import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ItemListContainer from './components/ItemListContainer'; 
-import ItemDetailContainer from './components/ItemDetailContainer'; 
+import NavBar from './components/NavBar';
 import SecondaryNavBar from './components/SecondaryNavBar';
+import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemDetail from './components/ItemDetail'; 
+import CategoryList from './components/CategoryList';
+import ProductList from './components/ProductList';
 
 function App() {
   return (
-    <Router> {/* Mueve el Router para envolver toda la estructura de la aplicación */}
+    <Router>
       <div>
         <header>
           <div className="App">
@@ -20,11 +22,12 @@ function App() {
           <div>
             <SecondaryNavBar />
           </div>
-          <ProductList />
           <Routes>
-            <Route exact path="/" element={<ItemListContainer />} />
-            <Route exact path="/category/:id" element={<ItemListContainer />} />
-            <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/category/:id" element={<ItemListContainer />} />
+            <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+            <Route path="/itemdetail/:itemId" element={<ItemDetail />} /> 
+            <Route path="/categorylist/:categoryId" element={<CategoryList />} />
           </Routes>
         </main>
       </div>
@@ -33,5 +36,6 @@ function App() {
 }
 
 export default App;
+
 
 

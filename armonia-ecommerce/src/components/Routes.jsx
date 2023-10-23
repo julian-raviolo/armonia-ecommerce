@@ -1,18 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ItemListContainer from './ItemListContainer';
-import ItemDetailContainer from './ItemDetailContainer';
+import ProductList from './ProductList';
 
 const Routes = () => {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={ItemListContainer} />
-        <Route exact path="/category/:id" component={ItemListContainer} />
-        <Route exact path="/item/:id" component={ItemDetailContainer} />
+        <Route path="/category/electronics" component={ProductList} />
+        <Route path="/category/jewelery" component={ProductList} />
       </Switch>
     </Router>
   );
 };
 
 export default Routes;
+
