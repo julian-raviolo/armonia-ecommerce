@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer = () => {
-  const { itemId, categoryId } = useParams();
+  const { itemId } = useParams();
   const [item, setItem] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchItem = async () => {
       try {
         const response = await fetch(`https://fakestoreapi.com/products/${itemId}`);
         const data = await response.json();
-        setItem(data); // Detalles del producto en el estado local del componente
+        setItem(data);
       } catch (error) {
+        setError('Error al obtener los detalles del producto. Por favor, inténtalo de nuevo más tarde.');
         console.error('Error al obtener los detalles del producto:', error);
       }
     };
@@ -21,21 +24,17 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      {item ? (
-        <div>
-          <h2>{item.title}</h2>
-          <img src={item.image} alt={item.title} />
-          <p>{item.description}</p>
-          <p>Categoría: {categoryId}</p>
-          <p>Precio: ${item.price}</p>
-        </div>
+      {error ? (
+        <div>{error}</div>
       ) : (
-        <p>Cargando...</p>
+        item && <ItemDetail item={item} />
       )}
     </div>
   );
 };
 
 export default ItemDetailContainer;
+
+
 
 
